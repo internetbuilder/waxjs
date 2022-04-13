@@ -49,7 +49,7 @@
 
   async function sign() {
     if(!wax.api) {
-      return document.getElementById('response').append('* Login first *');
+      return document.getElementById('response').append('Please Log First');
     }
 
     const wallet = document.getElementById('wallet').value;
@@ -89,7 +89,7 @@
       upper_bound: wax.userAccount,
     });
 
-    const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
+    const message = res.rows[0] ? res.rows[0].message : `Welcome ${wax.userAccount}!`;
     document.getElementById('current').textContent = message;
   }
 
