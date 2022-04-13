@@ -9,14 +9,16 @@
 
 <h1>FreeCityGame Claiming Tool</h1>
 
-<p>Welcome to the tool to claim RMX tokens once every 24 hours.<br><br>
-Click the buttons
+<p>Welcome to the tool to claim RMX tokens once every 24 hours.
 <br><br>
-<button id="login" onclick=login() >WAX Login</button>
-<label>Your wallet:</label><input id="wallet"><br><br>
-<hr><br>
+Click the buttons
+
+<button id="login" onclick=login() >WAX Login</button><br><br>
+<hr>
+<label>Your allet:</label><input id="wallet"><br><br>
 <button id="sign" onclick=sign() >Claim RMX Token</button><br><br>
-<hr><br>
+<label>Current Message</label><h3 id="current"></h3><br><br>
+<hr>
 <label>Transaction Results</label>
 <h2 id="response"></h2>
 </p>
@@ -84,6 +86,7 @@ Click the buttons
     });
 
     const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
+    document.getElementById('current').textContent = message;
   }
 
   // set a random value to the initial message value
