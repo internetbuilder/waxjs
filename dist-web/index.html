@@ -6,7 +6,7 @@
 <title>RemixWorlds Claim App 777</title>
 
 <body>
-
+<center>
 <h1>wax signing lib demo and tester</h1>
 
 <p>As well as being a demo, this is used by the test cases in the test folder.</p>
@@ -21,6 +21,7 @@
 <hr>
 <label>wallet:</label><input id="wallet"><br><br>
 <button id="sign" onclick=sign() >Claim RMX Token</button><br><br>
+<hr>
 <label>Current Message</label><h3 id="current"></h3><br><br>
 <hr>
 <label>Transaction Results</label>
@@ -49,7 +50,7 @@
 
   async function sign() {
     if(!wax.api) {
-      return document.getElementById('response').append('Please Log First');
+      return document.getElementById('response').append('Please Login First');
     }
 
     const wallet = document.getElementById('wallet').value;
@@ -97,5 +98,6 @@
   document.getElementById('message').value = Math.random().toString(36).substring(2);
 
 </script>
+</center>
 </body>
 </html>
