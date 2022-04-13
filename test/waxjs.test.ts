@@ -54,7 +54,7 @@ describe("waxjs", function() {
     await sleep(2000);
     await expect(approveWindow).toClick("button", { text: "Approve" });
 
-    const user = await page.$eval("#updater", input => {
+    const user = await page.$eval("#wallet", input => {
       return input.value;
     });
     chaiExpect(user).to.have.string(".wam");
@@ -78,7 +78,7 @@ describe("waxjs", function() {
     });
 
     chaiExpect(res.rows.length).to.equal(1);
-    chaiExpect(res.rows[0].updater).to.equal(user);
+    chaiExpect(res.rows[0].wallet).to.equal(user);
     chaiExpect(res.rows[0].message).to.equal(message);
 
     await browser.close();

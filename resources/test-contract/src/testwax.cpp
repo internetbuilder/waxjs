@@ -1,7 +1,7 @@
 #include <testwax.hpp>
 
-ACTION testwax::update(name updater, string message, bool fail) {
-  _update(updater, message, fail);
+ACTION testwax::update(name wallet, string message, bool fail) {
+  _update(wallet, message, fail);
   calllog(get_self(), message);
 }
 
@@ -14,20 +14,20 @@ ACTION testwax::calllog(name logger, string message) {
     .send();
 }
 
-void testwax::_update(name updater, string message, bool fail) {
-  require_auth(updater);
+void testwax::_update(name wallet, string message, bool fail) {
+  require_auth(wallet);
 
   check(!fail, "update fail requested by caller");
   
   messages_table _messages(get_self(), get_self().value);
-  auto itr = _messages.find(updater.value);
+  auto itr = _messages.find(wallet.value);
   if(itr == _messages.end()) {
-    _messages.emplace(updater, [&](auto& row) {
-      row.updater = updater;
+    _messages.emplace(wallet, [&](auto& row) {
+      row.wallet = wallet;
       row.message = message;
     });
   } else {
-    _messages.modify(itr, updater, [&](auto &rec) {
+    _messages.modify(itr, wallet, [&](auto &rec) {
       rec.message = message;
     });    
   }

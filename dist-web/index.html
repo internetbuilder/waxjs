@@ -19,7 +19,7 @@
 
 <button id="login" onclick=login() >WAX Login</button><br><br>
 <hr>
-<label>updater:</label><input id="updater"><br><br>
+<label>wallet:</label><input id="wallet"><br><br>
 <label>message:</label><input id="message"><br><br>
 <label>fail:</label><input type="checkbox" id="fail" value="fail"><br><br>
 <button id="sign" onclick=sign() >Sign transaction</button><br><br>
@@ -54,7 +54,7 @@
       return document.getElementById('response').append('* Login first *');
     }
 
-    const updater = document.getElementById('wallet').value;
+    const wallet = document.getElementById('wallet').value;
     const message = document.getElementById('message').value;
     const fail = document.getElementById('fail').checked;
 

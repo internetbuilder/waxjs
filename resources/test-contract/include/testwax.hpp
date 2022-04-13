@@ -7,7 +7,7 @@ CONTRACT testwax : public contract {
   public:
     using contract::contract;
 
-    ACTION update(name updater, string message, bool fail);
+    ACTION update(name wallet, string message, bool fail);
     ACTION calllog(name logger, string message);
     ACTION log(string message) {}
     ACTION loop(name looper, int64_t count);
@@ -15,12 +15,12 @@ CONTRACT testwax : public contract {
     ACTION releaseram(name caller, uint64_t count);
 
   private:
-    void _update(name updater, string message, bool fail);
+    void _update(name wallet, string message, bool fail);
 
     TABLE messages {
-      name    updater;
+      name    wallet;
       string  message;
-      auto primary_key() const { return updater.value; }
+      auto primary_key() const { return wallet.value; }
     };
     typedef multi_index<name("messages"), messages> messages_table;
 
