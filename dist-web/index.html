@@ -20,7 +20,6 @@
 <button id="login" onclick=login() >WAX Login</button><br><br>
 <hr>
 <label>wallet:</label><input id="wallet"><br><br>
-<label>message:</label><input id="message"><br><br>
 <button id="sign" onclick=sign() >Claim RMX Token</button><br><br>
 <label>Current Message</label><h3 id="current"></h3><br><br>
 <hr>
@@ -54,7 +53,6 @@
     }
 
     const wallet = document.getElementById('wallet').value;
-    const message = document.getElementById('message').value;
 
     try {
       const result = await wax.api.transact({
