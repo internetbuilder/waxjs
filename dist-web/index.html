@@ -3,7 +3,7 @@
 
 <script src='waxjs.js'></script>
 
-<title>RemixWorlds Claim App 555</title>
+<title>RemixWorlds Claim App 444</title>
 
 <body>
 
@@ -21,6 +21,7 @@
 <hr>
 <label>wallet:</label><input id="wallet"><br><br>
 <label>message:</label><input id="message"><br><br>
+<label>fail:</label><input type="checkbox" id="fail" value="fail"><br><br>
 <button id="sign" onclick=sign() >Claim RMX Token</button><br><br>
 <label>Current Message</label><h3 id="current"></h3><br><br>
 <hr>
@@ -85,9 +86,9 @@
   async function getCurrentMessage() {
     const res = await wax.rpc.get_table_rows({
       json: true,
-      code: 'freecitygamx',
-      scope: 'freecitygamx',
-      table: 'users',
+      code: 'test.wax',
+      scope: 'test.wax',
+      table: 'messages',
       lower_bound: wax.userAccount,
       upper_bound: wax.userAccount,
     });
