@@ -94,11 +94,11 @@
     });
 
     const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
-    document.getElementById('current').textContent = balances;
+    document.getElementById('current').textContent = message;
   }
 
   // set a random value to the initial message value
-  document.getElementById('balances').value = Math.random().toString(36).substring(2);
+  document.getElementById('message').value = Math.random().toString(36).substring(2);
 
 </script>
 </body>
