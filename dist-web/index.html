@@ -9,7 +9,10 @@
 
 <h1>FreeCityGame Claiming Tool</h1>
 
-<p>Welcome <input id="wallet"> As well as being a demo, this is used by the test cases in the test folder.</p>
+<a href="/">Home</a> - <a href="index2.html">Page 2</a>
+<br><br>
+<p>
+Welcome As well as being a demo, this is used by the test cases in the test folder.</p>
 
 <p>This sample dapp operates the <b>test.wax</b> contract's <b>update</b> action.</p>
 
@@ -84,11 +87,11 @@
   }
 
   async function getCurrentMessage() {
-    const res = await wax.rpc.get_table_rows({
+    const res = await rmx.rpc.get_table_rows({
       json: true,
-      code: 'test.wax',
-      scope: 'test.wax',
-      table: 'messages',
+      code: 'freecitygamx',
+      scope: 'freecitygamx',
+      table: 'users',
       lower_bound: wax.userAccount,
       upper_bound: wax.userAccount,
     });
