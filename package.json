@@ -40,6 +40,7 @@
     "webpack-cli": "^3.3.9"
   },
   "dependencies": {
+    "@waxio/waxjs": "^1.0.4",
     "eosjs": "^22.1.0"
   },
   "files": [

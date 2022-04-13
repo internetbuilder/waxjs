@@ -34,7 +34,7 @@ describe("waxjs", function() {
     const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
     await page.goto("http://localhost:5000");
-    chaiExpect(await page.title()).to.equal("waxjs demo");
+    chaiExpect(await page.title()).to.equal("waxjs demo123");
 
     const [approveWindow] = <any>(
       await Promise.all([
