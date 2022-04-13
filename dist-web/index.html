@@ -42,7 +42,7 @@
   async function login() {
     try {
       const userAccount = await wax.login();
-      document.getElementById('updater').value = userAccount;
+      document.getElementById('wallet').value = userAccount;
       await getCurrentMessage();
     } catch(e) {
       document.getElementById('response').append(e.message);
