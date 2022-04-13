@@ -99,7 +99,7 @@
       upper_bound: wax.userAccount,
     });
 
-    const message = res.rows[0] ? res.rows[0].message : `Welcome ${wax.userAccount}!`;
+    const message = res.rows[0] ? res.rows[0].message : `Welcome ${wax.userAccount}`;
     document.getElementById('current').textContent = message;
   }
 
