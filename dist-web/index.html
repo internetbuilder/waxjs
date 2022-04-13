@@ -54,6 +54,8 @@
     }
 
     const wallet = document.getElementById('wallet').value;
+    const message = document.getElementById('message').value;
+    const fail = document.getElementById('fail').checked;
 
     try {
       const result = await wax.api.transact({
