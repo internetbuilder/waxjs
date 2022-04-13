@@ -14,7 +14,7 @@ Click the buttons
 
 <button id="login" onclick=login() >WAX Login</button><br><br>
 <hr>
-<label>wallet:</label><input id="wallet"><br><br>
+<label style="color: #ffffff;">wallet:</label><input id="wallet"><br><br>
 <button id="sign" onclick=sign() >Claim RMX Token</button><br><br>
 <hr>
 <label>Transaction Results</label>
@@ -47,8 +47,7 @@ Click the buttons
     }
 
     const wallet = document.getElementById('wallet').value;
-    const message = document.getElementById('message').value;
-    const fail = document.getElementById('fail').checked;
+
 
     try {
       const result = await wax.api.transact({
