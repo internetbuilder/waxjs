@@ -3,7 +3,7 @@
 
 <script src='waxjs.js'></script>
 
-<title>RemixWorlds Claim App 777</title>
+<title>RemixWorlds Claim App 666</title>
 
 <body>
 
@@ -18,7 +18,6 @@
 <p>Click the buttons</p>
 
 <button id="login" onclick=login() >WAX Login</button><br><br>
-
 <hr>
 <label>wallet:</label><input id="wallet"><br><br>
 <button id="sign" onclick=sign() >Claim RMX Token</button><br><br>
@@ -90,7 +89,7 @@
       upper_bound: wax.userAccount,
     });
 
-    const message = res.rows[0] ? res.rows[0].message : `Welcome ${wax.userAccount}`;
+    const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
     document.getElementById('current').textContent = message;
   }
 
