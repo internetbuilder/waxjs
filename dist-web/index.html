@@ -61,16 +61,14 @@
     try {
       const result = await wax.api.transact({
         actions: [{
-          account: 'test.wax',
-          name: 'update',
+          account: 'freecitygamx',
+          name: 'claimstake',
           authorization: [{
             actor: wax.userAccount,
             permission: 'active',
           }],
           data: {
-            updater,
-            message,
-            fail,
+            wallet,
           },
         }]
       }, {
