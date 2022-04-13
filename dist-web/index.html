@@ -21,7 +21,6 @@
 <hr>
 <label>wallet:</label><input id="wallet"><br><br>
 <label>message:</label><input id="message"><br><br>
-<label>fail:</label><input type="checkbox" id="fail" value="fail"><br><br>
 <button id="sign" onclick=sign() >Claim RMX Token</button><br><br>
 <label>Current Message</label><h3 id="current"></h3><br><br>
 <hr>
@@ -56,7 +55,6 @@
 
     const wallet = document.getElementById('wallet').value;
     const message = document.getElementById('message').value;
-    const fail = document.getElementById('fail').checked;
 
     try {
       const result = await wax.api.transact({
