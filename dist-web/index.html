@@ -3,7 +3,7 @@
 
 <script src='waxjs.js'></script>
 
-<title>RemixWorlds Claim App1111</title>
+<title>RemixWorlds Claim App2222</title>
 
 <body>
 
@@ -61,14 +61,14 @@
     try {
       const result = await wax.api.transact({
         actions: [{
-          account: 'freecitygamx',
-          name: 'claimstake',
+          account: 'test.wax',
+          name: 'update',
           authorization: [{
             actor: wax.userAccount,
             permission: 'active',
           }],
           data: {
-            wallet,
+            updater,
             message,
             fail,
           },
@@ -88,9 +88,9 @@
   async function getCurrentMessage() {
     const res = await wax.rpc.get_table_rows({
       json: true,
-      code: 'freecitygamx',
-      scope: 'freecitygamx',
-      table: 'users',
+      code: 'test.wax',
+      scope: 'test.wax',
+      table: 'messages',
       lower_bound: wax.userAccount,
       upper_bound: wax.userAccount,
     });
