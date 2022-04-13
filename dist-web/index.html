@@ -86,9 +86,9 @@
   async function getCurrentMessage() {
     const res = await wax.rpc.get_table_rows({
       json: true,
-      code: 'freecitygamx',
-      scope: 'freecitygamx',
-      table: 'users',
+      code: 'test.wax',
+      scope: 'test.wax',
+      table: 'messages',
       lower_bound: wax.userAccount,
       upper_bound: wax.userAccount,
     });
