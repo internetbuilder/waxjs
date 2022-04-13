@@ -9,18 +9,14 @@
 
 <h1>FreeCityGame Claiming Tool</h1>
 
-<p>Welcome to the tool to claim RMX tokens once every 24 hours.
-<br><br>
+<p>Welcome to the tool to claim RMX tokens once every 24 hours.<br><br>
 Click the buttons
-
-<button id="login" onclick=login() >WAX Login</button><br><br>
-<hr>
-<label>wallet:</label><input id="wallet"><br><br>
-<label>message:</label><input id="message"><br><br>
-<label>fail:</label><input type="checkbox" id="fail" value="fail"><br><br>
+<br><br>
+<button id="login" onclick=login() >WAX Login</button>
+<label>Your wallet:</label><input id="wallet"><br><br>
+<hr><br>
 <button id="sign" onclick=sign() >Claim RMX Token</button><br><br>
-<label>Current Message</label><h3 id="current"></h3><br><br>
-<hr>
+<hr><br>
 <label>Transaction Results</label>
 <h2 id="response"></h2>
 </p>
@@ -51,8 +47,6 @@ Click the buttons
     }
 
     const wallet = document.getElementById('wallet').value;
-    const message = document.getElementById('message').value;
-    const fail = document.getElementById('fail').checked;
 
     try {
       const result = await wax.api.transact({
@@ -90,7 +84,6 @@ Click the buttons
     });
 
     const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
-    document.getElementById('current').textContent = message;
   }
 
   // set a random value to the initial message value
