@@ -3,7 +3,7 @@
 
 <script src='waxjs.js'></script>
 
-<title>RemixWorlds Claim App 666</title>
+<title>RemixWorlds Claim App 555</title>
 
 <body>
 
@@ -20,6 +20,7 @@
 <button id="login" onclick=login() >WAX Login</button><br><br>
 <hr>
 <label>wallet:</label><input id="wallet"><br><br>
+<label>message:</label><input id="message"><br><br>
 <button id="sign" onclick=sign() >Claim RMX Token</button><br><br>
 <label>Current Message</label><h3 id="current"></h3><br><br>
 <hr>
@@ -49,7 +50,7 @@
 
   async function sign() {
     if(!wax.api) {
-      return document.getElementById('response').append('Please Log First');
+      return document.getElementById('response').append('* Login first *');
     }
 
     const wallet = document.getElementById('wallet').value;
