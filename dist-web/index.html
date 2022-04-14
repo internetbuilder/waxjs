@@ -5,7 +5,8 @@
 
 <title>RMX Claim Tool</title>
 
-<body bgcolor="#0A0A0A"style="color: #ffffff;">
+<body bgcolor="#000000"style="color: #ffffff;">
+<h1>FreeCityGame Claiming Tool</h1>
 <meta name="viewport" content="width=device-width"/>
 
 <p>Welcome to the tool to claim RMX tokens once every 24 hours.<br><br>
@@ -73,8 +74,7 @@ After your claim you return to the <a href="https://play.remixworlds.com">play a
       await new Promise(resolve => setTimeout(resolve, 1000));
       await getCurrentMessage();
     } catch(e) {
-      document.getElementByI
-      d('response').append(e.message);
+      document.getElementById('response').append(e.message);
     }
   }
 
