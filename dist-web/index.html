@@ -3,7 +3,7 @@
 
 <script src='waxjs.js'></script>
 
-<title>RMX Claim Tooll</title>
+<title>RMX Claim Tool</title>
 
 <body bgcolor="#0A0A0A"style="color: #ffffff;">
 <meta name="viewport" content="width=device-width"/>
@@ -68,7 +68,9 @@ After your claim, refresh the page to see your RMX balance updated.
         blocksBehind: 3,
         expireSeconds: 30
       });
-      document.getElementById('response').append(JSON.stringify(result));
+      //document.getElementById('response').append(JSON.stringify(result));
+      document.getElementById('response').append('* DONE, REFRESH THE PAGE TO SEE YOUR RMX BALANCE UPDATED *');
+
       await new Promise(resolve => setTimeout(resolve, 1000));
       await getCurrentMessage();
     } catch(e) {
