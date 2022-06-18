@@ -25,7 +25,7 @@ After your claim, refresh the page to see your RMX balance updated.
 </p>
 <script>
   const wax = new waxjs.WaxJS({
-    rpcEndpoint: 'https://api.hivebp.io'
+    rpcEndpoint: 'https://wax.greymass.com'
   });
   // const wax = new waxjs.WaxJS({
   //   rpcEndpoint: 'http://wax-all.test:8888',
@@ -68,7 +68,9 @@ After your claim, refresh the page to see your RMX balance updated.
         blocksBehind: 3,
         expireSeconds: 30
       });
-      document.getElementById('response').append(JSON.stringify(result));
+      //document.getElementById('response').append(JSON.stringify(result));
+      document.getElementById('response').append('* DONE, REFRESH THE PAGE TO SEE YOUR RMX BALANCE UPDATED *');
+
       await new Promise(resolve => setTimeout(resolve, 1000));
       await getCurrentMessage();
     } catch(e) {
