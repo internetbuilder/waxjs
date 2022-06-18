@@ -11,28 +11,24 @@
 <p>Welcome to the tool, to claim RMX tokens once every 24 hours.<br><br>
 1- Click this buttons to login
 <br><br>
-<button id="login" onclick=login() >WAX Login</button>
-<input id="wallet"><br><br>
+<button id="login" onclick=login() >WAX Login</button><br>
+<h2 id="current"></h2>
+<label hidden="hidden">wallet:</label><input id="wallet" hidden="hidden"><br><br>
+
 <hr><br>
 2- Click this buttons to claim
 <br><br>
+
 <button id="sign" onclick=sign() >Claim RMX Token</button><br><br>
 After your claim, refresh the page to see your RMX balance updated.
 <br>
 <hr><br>
-<label>Transaction Results</label>
 <h2 id="response"></h2>
 </p>
 <script>
   const wax = new waxjs.WaxJS({
     rpcEndpoint: 'https://wax.greymass.com'
   });
-  // const wax = new waxjs.WaxJS({
-  //   rpcEndpoint: 'http://wax-all.test:8888',
-  //   tryAutoLogin: true,
-  //   waxSigningURL: 'http://all-access.wax.test:8113',
-  //   waxAutoSigningURL: 'http://idm.wax.test:8113/v1/accounts/auto-accept/'
-  // });
 
   async function login() {
     try {
@@ -88,7 +84,8 @@ After your claim, refresh the page to see your RMX balance updated.
       upper_bound: wax.userAccount,
     });
 
-    const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
+    const message = res.rows[0] ? res.rows[0].message : `${wax.userAccount}`;
+      document.getElementById('current').textContent = message;
   }
 
   // set a random value to the initial message value
